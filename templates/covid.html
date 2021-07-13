@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+{% block body %}
+<style type="text/css">
+    
+    .feedback-input{
+    /*background-color: aquamarine;*/
+        background: transparent;
+        height: 40px;
+        color: white;
+        margin: 15px 0;
+        font-size: 1.2em;
+        /*float: right;*/
+        /*position: relative;*/
+        width: 60%;
+        border:2px solid rgba(0,0,0,1.0);
+        border-radius: 6px;
+        outline: none;
+        padding: 10px;
+        box-shadow: 0px 0px 30px rgba(0,0,0,0.0);
+        overflow: hidden;
+        transition: 0.2s;
+        resize: none;
+        }   
+    
+    .feedback-input:focus{box-shadow: 0px 0px 30px rgba(0,0,0,0.8);}
+    
+    .form1{
+        /*background-color: red;*/
+        margin: 60px auto;
+        max-width:50%;
+        text-align: center; 
+    }        
+            
+    ::placeholder {
+        color: rgba(255,255,255,0.7);
+        /*padding: 10px;*/
+        line-height: normal;
+        font-style: italic;
+        font-family: 'Varela Round', sans-serif;
+        font-stretch: expanded;
+         /* Firefox */
+        }
+
+
+    .generate{
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        padding:10 20 10 20 ;
+        background-color: #ff365e;
+/*      line-height: 55px;*/
+        font-family: 'Varela Round', sans-serif;
+        transform: scale(1.0);
+        transition: 0.3s;
+        border:none;
+        border-radius: 6px;
+        outline: none;  
+        }
+    .generate:hover{transform: scale(1.1);}
+
+    .textc{
+        resize: none;vertical-align: bottom;
+            background: transparent;
+        color: white;
+        border:2px solid rgba(0,0,0,1.0);
+        border-radius: 6px;
+        outline: none;
+        padding: 10px;
+        box-shadow: 0px 0px 30px rgba(0,0,0,0.0);
+        transition: 0.2s;
+    }
+    .textc:focus{box-shadow: 0px 0px 30px rgba(0,0,0,0.8);}
+    #textarea{
+        margin: 50px 15px;
+        color: white;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 20px;
+        display: inline;
+        }
+
+
+
+</style>
+<div class="form1" >
+    <form class="montform" method="post" name="myform">
+
+        <p class="name">
+            <input name="country" type="text" class="feedback-input" required placeholder="Enter Country Name" id="country" />
+        </p>
+        <div class="submit">
+            <input type="button" class="generate" value="Show Stats" onClick="getData()"></input>
+        </div>
+        <p class="text">
+            <textarea name="stats1" class="feedback-input"  id="stats1" placeholder="Confirmed:??" rows="2" cols="50"></textarea>
+            <textarea name="stats2" class="feedback-input"  id="stats2" placeholder="Recovered:??"></textarea>
+            <textarea name="stats4" class="feedback-input"  id="stats4" placeholder="Deaths:??"></textarea>
+        </p>
+        
+    </form>
+           
+</div>
+
+    <script>        
+        document.getElementById("stats2").disabled = true;
+        document.getElementById("stats1").disabled = true;
+        document.getElementById("stats4").disabled = true;
+        
+        function getData() {
+          var country = document.getElementById('country').value;
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("GET", "https://covid19.mathdro.id/api/countries/" + country, true);
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.myform.stats1.value='Confirmed Cases - ' + JSON.parse(this.responseText)['confirmed'].value
+                document.myform.stats2.value='Recovered - ' + JSON.parse(this.responseText)['recovered'].value
+               
+                document.myform.stats4.value='Death(s) - ' + JSON.parse(this.responseText)['deaths'].value
+            }
+          };
+          
+          xhttp.send();
+        }
+    </script>
+
+{% endblock %}

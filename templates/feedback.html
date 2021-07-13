@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+
+<style >
+	
+	#inputs{
+	/*background-color: aquamarine;*/
+		background: transparent;
+		height: 40px;
+		color: white;
+		margin: 15px 0;
+		/*float: right;*/
+		/*position: relative;*/
+		width: 60%;
+		border:2px solid rgba(0,0,0,1.0);
+		border-radius: 6px;
+		outline: none;
+		padding: 10px;
+		box-shadow: 0px 0px 30px rgba(0,0,0,0.0);
+		transition: 0.2s;
+		}	
+	
+	#inputs:focus{box-shadow: 0px 0px 30px rgba(0,0,0,0.8);}
+			
+	#form1{
+		width: 50%;
+		margin:80 auto 0 ;
+		/*background-color:antiquewhite;*/
+		/*position: absolute;*/
+		text-align: center;
+		}
+			
+	::placeholder {
+  		color: rgba(255,255,255,0.7);
+  		padding: 20px;
+  		line-height: normal;
+  		font-style: italic;
+  		font-family: 'Varela Round', sans-serif;
+  		font-stretch: expanded;
+  		 /* Firefox */
+		}
+
+
+	button{
+		margin: 20 25% ;
+		border-radius: 6px;
+		border: none;
+		background-color:#ff365e;
+/*		background-size:160px;*/
+		}
+	.generate{
+		font-size: 18px;
+		color: white;
+		font-weight: bold;
+		padding:10 20 10 20 ;
+/*		line-height: 55px;*/
+		font-family: 'Varela Round', sans-serif;
+		transform: scale(1.0);
+		transition: 0.3s;
+		outline: none;	
+		}
+	.generate:hover{transform: scale(1.1);}
+
+	.textc{
+		resize: none;vertical-align: bottom;
+			background: transparent;
+		color: white;
+		font-size: 1.1em;
+		width: 60%;
+		border:2px solid rgba(0,0,0,1.0);
+		border-radius: 6px;
+		outline: none;
+		padding: 10px;
+		box-shadow: 0px 0px 30px rgba(0,0,0,0.0);
+		transition: 0.2s;
+	}
+	.textc:focus{box-shadow: 0px 0px 30px rgba(0,0,0,0.8);}
+	#textarea{
+		margin: 50px 15px;
+		color: white;
+		font-family: 'Varela Round', sans-serif;
+		font-size: 20px;
+		display: inline;
+		}
+
+
+@media (max-width:600px){
+	.textc{width: 100%;}
+	#inputs{width: 100%;}
+	#form1{width: 60%;}
+
+}
+
+
+
+</style>
+
+<div id ="form1">
+	<form action="/feedback" method="post" novalidate>
+		<div id="textarea">Name : </div> <span style="color: white;">{{star}}</span><input type="text" id="inputs" name="name" required>
+		<br>
+		<div id="textarea">Email : </div> <span style="color: white;">{{star}}</span><input type="text" id="inputs" name="email" required>
+		<br>
+		<div id="textarea">Rating : </div>
+			<input type="range" name="rating" min="1" max="5" onchange="updateTextInput(this.value);" style="display: inline; width: 30%; margin: 10px 0;" required>
+				<div id="textInput" style="display: inline;color: white;font-size: 1.2em">3 &#9734;</div>
+			<span> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;</span><br><br>
+		
+		<div id="textarea" style="vertical-align: top;">Comments : </div> <textarea name="comment" rows="2" cols="35" class="textc" maxlength="120"> </textarea><span> &emsp;&emsp; &emsp; </span>
+		<br>
+
+		<button type="submit">
+			<p class="generate">SUBMIT</p>
+		</button>
+		<p style="color: white;">{{message}}</p>
+	</form>
+
+</div>
+
+<script type="text/javascript">
+	function updateTextInput(val) {
+          document.getElementById('textInput').innerHTML=val+" &#9734;"; 
+        }
+
+</script>
+
+  {% endblock %}

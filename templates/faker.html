@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<style >
+	
+	
+	.mainbody{
+				
+				margin:30px auto ;
+				width:90%;
+				padding-top: 10vh;
+				/*background-color: white;*/
+			}
+			.leftsection{
+				width:20%;
+				/*background-color: red;*/
+				 position: fixed;
+ 				 top: 140px;
+				height: 100vh;
+				float:left;
+				font-family: 'Roboto Slab', serif;
+				font-weight: 600;
+				font-size: 3em;
+				text-align:left;
+				color: white;
+			}
+			.rightarticle{
+				width: 70%;
+				/*background-color: aqua;*/
+				/*height: 200vh;*/
+				float:right;
+
+				/*text-align: center;*/
+			}
+
+	#form1{
+		width: 50%;
+		/*margin:100 auto 0 ;*/
+/*		background-color:antiquewhite;*/
+		}
+		
+
+	button{
+		margin: 35 85;
+		border-radius: 6px;
+		border: none;
+		background-color:#ff365e;
+/*		background-size:160px;*/
+		}
+	.generate{
+		font-size: 18px;
+		color: white;
+		font-weight: bold;
+		padding:10 20 10 20 ;
+/*		line-height: 55px;*/
+		font-family: 'Varela Round', sans-serif;
+		transform: scale(1.0);
+		transition: 0.3s;
+		outline: none;	
+		}
+	.generate:hover{transform: scale(1.1);}
+
+	td{color: white;
+		font-size: 1.3em;
+		padding: 8px;}
+
+</style>
+<div class="mainbody">
+
+<section class="leftsection">
+	<div style="background-image: url({{ url_for ('static', filename = 'faker.png') }});background-size: cover;height: 40%;width:auto;"></div>
+		<form action="/faker" method="post" novalidate>
+		<button type="submit">
+			<p class="generate">GENERATE</p>
+		</button>
+		
+	</form>
+</section>
+
+<article class="rightarticle">
+
+	<table>
+		<tr><td>Name </td><td>:&emsp; {{ fk_name }}</td></tr>
+		<tr><td>Email </td><td>:&emsp; {{ fk_email }}</td></tr>
+		<tr><td>Phone </td><td>:&emsp; {{ fk_phone }}</td></tr>
+		<tr><td>DOB </td><td>:&emsp; {{ fk_DOB }}</td></tr>
+		<tr><td>Blood Group </td><td>:&emsp; {{ fk_blood }}</td></tr>
+		<tr><td>Address </td><td>:&emsp; {{ fk_address }}</td></tr>
+		<tr><td>Job </td><td>:&emsp; {{ fk_job }}</td></tr>
+		<tr><td>Credit card number </td><td>:&emsp; {{ fk_cc_number }}</td></tr>
+		<tr><td>Credit card expiry </td><td>:&emsp; {{ fk_cc_expiry }}</td></tr>
+	</table>
+</article>
+
+<script>
+if(window.history.replaceState) 
+{
+window.history.replaceState(null,null,window.location.href);
+}
+</script>
+    
+
+{% endblock %}

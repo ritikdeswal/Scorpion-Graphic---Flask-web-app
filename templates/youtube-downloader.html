@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<style >
+	
+	#url{
+/*	background-color: aquamarine;*/
+		background: transparent;
+		height: 40px;
+		color: white;
+		width: 100%;
+		border:2px solid black;
+		border-radius: 6px;
+		outline: none;
+		padding: 10px;
+		box-shadow: 0px 0px 30px rgba(0,0,0,0.0);
+		transition: 0.2s;
+		}	
+	
+	#url:focus{box-shadow: 0px 0px 30px rgba(0,0,0,0.8);}
+			
+	#form1{
+		width: 50%;
+		margin:100 auto 0 ;
+/*		background-color:antiquewhite;*/
+		}
+		#form2{
+		width: 50%;
+		margin:10 auto 0 ;
+/*		background-color:antiquewhite;*/
+		}	
+	::placeholder {
+  		color: rgba(255,255,255,0.7);
+  		padding: 20px;
+  		line-height: normal;
+  		font-style: italic;
+  		font-family: 'Varela Round', sans-serif;
+  		font-stretch: expanded;
+  		 /* Firefox */
+		}
+
+
+	button{
+		margin: 20 25% ;
+		border-radius: 6px;
+		border: none;
+		background-color:#ff365e;
+/*		background-size:160px;*/
+		}
+	.generate{
+		font-size: 18px;
+		color: white;
+		font-weight: bold;
+		padding:10 20 10 20 ;
+/*		line-height: 55px;*/
+		font-family: 'Varela Round', sans-serif;
+		transform: scale(1.0);
+		transition: 0.3s;
+		outline: none;	
+		}
+	.generate:hover{transform: scale(1.1);}
+
+				
+	#textarea{
+		margin: 50px 15px;
+		color: white;
+		font-family: 'Varela Round', sans-serif;
+		font-size: 20px;
+		}
+		
+		#ytlinks{
+			font-size: 1em;
+			color :white;
+			/*margin: 10px 3px ;*/
+			padding: 5px 3px;
+		}
+		#ytlinks:hover{
+			color: #ff365e;
+		}
+</style>
+<div id ="form1">
+	<form action="/youtube-downloader" method="post" novalidate>
+		<input type="text" id="url" name="url" placeholder="Enter URL here">
+		<br>
+		<button type="submit">
+			<p class="generate">GENERATE</p>
+		</button>
+		
+	</form>
+
+	<div id="textarea">{{para}}</div>
+	
+</div>
+<p style="color: white;margin: auto;font-size: 1.2em;
+"> * This tool is currently in testing mode.</p>
+<div id ="form2">
+	<ul>
+	{% for i in ytlinks %}
+	
+		<li style="margin: 5px;"><a href="/downloading/{{i[0]}}" id="ytlinks">{{i[1:]}}</a></li>
+
+	{% endfor %}
+</ul>
+</div>
+
+
+<script>
+if(window.history.replaceState) 
+{
+window.history.replaceState(null,null,window.location.href);
+}
+</script>
+    
+
+{% endblock %}

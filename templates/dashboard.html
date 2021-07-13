@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		color: white;}
+
+	#table{
+		width: 100%;
+		 border-collapse: collapse;
+	
+	}
+	#caption{
+		font-size: 2em;
+		margin: 20px auto;
+	}
+	#table th{
+		font-weight: bold;
+		padding: 10px 0 10 0 ;
+	}
+	td,th{
+			border-top: 2px solid black;
+		border-bottom: 2px solid black;
+		text-align: center;
+		padding: 7px 4px 7px 4px;
+	}
+
+	#button{
+		/*margin: 20 10% ;
+		/*border-radius: 6px;*/
+		border: none;
+		/*background-color:#ff365e;}*/
+	}
+
+	.generate{
+		font-size: 18px;
+		color: white;
+		font-weight: bold;
+		padding-left:30 ;
+		line-height: 52px;
+		font-family: 'Varela Round', sans-serif;
+		transform: scale(1.0);
+		transition: 0.3s;
+		outline: none;	
+		}
+	.generate:hover{transform: scale(1.1);color: #ff365e;}
+
+</style>
+
+<div style="width: 85%;display: flex;margin: 40px auto;">
+	
+	<table id="table">
+		<caption id="caption">Feedback</caption>
+		<tr>
+			<!-- <th>Sno</th> -->
+			<th>Name</th>
+			<th>Email</th>
+			<th>Rating</th>
+			<th>Comment</th>
+			<th>Date</th>
+		</tr>
+		{% for feedbk in feedback %}
+
+		<tr>
+			<!-- <td>{{ feedbk.sno }}</td> -->
+			<td>{{ feedbk.name }}</td>
+			<td>{{ feedbk.email }}</td>
+			<td>{{ feedbk.rating }}</td>
+			<td>{{ feedbk.comment }}</td>
+			<td>{{ feedbk.datetime }}</td>
+			<td> <a id="button" href="/delete/{{feedbk.sno}}">
+			<p class="generate">Delete</p>
+		</button></td>
+		</tr>	
+		{% endfor %}
+
+	</table>
+
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+*{
+	padding:0;
+	margin:0;
+	font-family: 'Varela Round', sans-serif;
+}
+body
+			{
+				padding:0;
+				margin:0;
+				/*background: url({{ url_for ('static', filename = 'wallp.jpg') }});*/
+				background-size: 105%;
+			} 
+
+
+			.rain
+			{
+				height: 100%;
+				/*background: url({{ url_for ('static', filename = 'rain2.png') }});*/
+				animation: rain .5s linear infinite;
+				/*opacity: 70%;*/
+			}
+
+
+		@keyframes rain 
+		{
+			0%
+			{
+				background-position: 0% 0%;
+			}
+
+			100%
+			{
+				background-position: 0% -200%;
+			}
+		} 
+
+header{
+	background-color: red;
+	height: 70px;
+}
+#logo{
+	/*background-image: url({{ url_for ('static', filename = 'logo.png') }});*/
+	background-repeat: no-repeat;
+	background-size: 85%;
+	vertical-align: baseline;
+	/*background-color: aqua;*/
+	margin: 15px;
+	 width: 30%;
+	 height: 95%;
+	 padding: 9px 0px 0px 9px;
+	 box-sizing: border-box;
+	float:left;
+}
+
+
+/*end of logo*/
+
+
+#navbar{
+	/*background-color: green;*/
+	float: right;
+	height: inherit;
+	margin: 15px;
+	box-sizing: border-box;
+	/*width:60%;*/
+}
+#list{
+	/*float: right;*/
+	/*margin: 15px;*/
+	/*box-sizing:content-box;*/
+	/*background-color: red;*/
+	height: inherit;
+}
+#list li
+{
+		display: inline-block;
+		/*isi ki wajah se list horizontal dikhti hai.*/
+		list-style: none;
+		/*box-sizing: content-box;*/
+		font-size: 18px;
+		color: white;
+		font-weight: bold;
+		margin: 0px 20px 0px 20px;
+		background-size: 160px;
+		/*background-color: pink;*/
+		line-height: 55px;
+		font-family: 'Varela Round', sans-serif;
+		transition: 0.3s;
+}
+#list li:hover{
+	/*animation: hover .2s linear;*/
+	color : #ff365e;
+	font-size: 20px;
+}
+#dropdown {
+  position: relative;
+}
+
+.dropc {
+   position: absolute;
+	display: none;
+	/*display: block;*/
+	width: 20%;
+	/*background-color: rgba(200,200,200,1);*/
+	border-radius: 0px 0px 3px 3px;
+	margin-left: -25px;
+	padding: 4px 8px;
+    box-shadow: 0px 7px 40px rgba(0,0,0,0.8);
+}
+li:hover> .dropc {
+  display: block;
+}
+a:link{
+	text-decoration: none!important;
+	text-decoration-style: none!important;
+	color: inherit;
+}
+a:visited{
+	text-decoration: none!important;
+	text-decoration-style: none!important;
+	color: inherit;
+}
+button:hover{
+	
+}
+

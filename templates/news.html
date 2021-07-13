@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+{% block body %}
+<style type="text/css">
+	
+
+	
+			.dropc{
+				background-color: rgba(0,0,0,0.7);
+			}
+	.mainbody{
+				
+				margin:30px auto ;
+				width:90%;
+				padding-top: 10vh;
+				/*background-color: white;*/
+			}
+			.leftsection{
+				width:20%;
+				/*background-color: red;*/
+				 position: fixed;
+ 				 top: 160px;
+				height: 100vh;
+				float:left;
+				font-family: 'Roboto Slab', serif;
+				font-weight: 600;
+				font-size: 3em;
+				text-align:left;
+				color: white;
+			}
+			.rightarticle{
+				width: 75%;
+				/*background-color: aqua;*/
+				height: 200vh;
+				float:right;
+
+				/*text-align: center;*/
+			}
+			.individualnews{
+				width: 85%;
+				font-family: 'Roboto Slab', serif;
+				font-weight: 400;
+				background-color: rgba(0,0,0,0.4);
+				height: 130px;
+				border-radius: 7px;
+				margin: 30px 50px;
+				transform: scale(1.0);
+				transition: 0.2s;
+				overflow: hidden;
+				filter: drop-shadow(0px 0px 0px rgba(0,0,0,0.0));
+			}
+			.individualnews:hover{
+				transform: scale(1.1);
+				filter: drop-shadow(0px 0px 8px rgba(0,0,0,0.9));
+				overflow: hidden;
+			}
+
+			.parentimg{
+				/*clip: rect(0px,60px,200px,0px);*/
+				width: 25%;
+				height: auto;
+				/*background-color: black;*/
+				float: left;
+			}
+			img{
+				position: absolute;
+     			/*left: -10px; */
+    			clip: rect(0px, 225px, 150px, 0px);
+			}
+			.parentheading{
+				/*clip: rect(0px,60px,200px,0px);*/
+				width: 70%;
+				height: auto;
+				position: relative;
+				/*overflow: hidden;*/
+				color: white;
+				/*background-color: grey;*/
+				float: right;
+				padding: 7px;
+				box-sizing: border-box;
+			}
+			p{
+			font-family: 'PT Sans', sans-serif;
+			margin-right: 10px;
+			/*position: absolute;*/
+				/*overflow: ;*/
+				/*clip: rect(0px, 700px, 100px, 0px);*/
+				}
+</style>
+<div class="mainbody">
+
+<section class="leftsection">
+	Top Headlines from BBC NEWS
+</section>
+<article class="rightarticle">
+	{% for new, description , img , url  in context %}
+
+	<a href="{{ url }}" target="_blank">
+		<div class="individualnews">
+			<div class="parentimg">
+				<img src="{{ img }}" alt="" width="auto" height="130">
+			</div>
+			<div class="parentheading">
+				 <p style="font-size: 1.2em"> {{ new }}</p><br>
+				<p style="position: absolute;">{{ description }}</p>
+			</div>
+		</div>
+	</a>
+	
+	{% endfor %}
+</article>
+
+</div>
+
+{% endblock %}

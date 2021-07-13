@@ -1,0 +1,291 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<style type="text/css">
+	
+
+	::-webkit-scrollbar{
+			width:12px;
+			background-color: #080b10;
+		}
+			
+	::-webkit-scrollbar-thumb{
+			background: linear-gradient(transparent,#ff365e);
+			border-radius: 8px;
+			height: 12px;
+		}
+			.dropc{
+				background-color: rgba(0,0,0,0.7);
+			}
+	.mainbody{
+				
+				margin:30px auto ;
+				width:90%;
+				padding-top: 10vh;
+				/*background-color: white;*/
+			}
+			.leftsection{
+				width:20%;
+				/*background-color: red;*/
+				 position: fixed;
+ 				 top: 160px;
+ 				 left:8.5%;
+				/*height: 100vh;*/
+				float:left;
+				animation: fade 0.5s linear;
+				animation-delay: 0.3s;
+				text-align:left;
+				color: white;
+				opacity: 0%;
+				animation-fill-mode: forwards;
+			}
+			@keyframes fade{
+				0%{
+					opacity: 0%;
+					top:200px;
+				}
+				100%{
+					opacity: 100%;
+					top:160px;
+				}
+			}
+			p{
+				/*font-family: 'Roboto Slab', serif;*/
+				/*font-family: 'Varela Round', sans-serif;*/
+				font-family: 'arial', serif;
+				margin-top: 20px;
+				font-weight: 600;
+				font-size: 2.5em;
+				letter-spacing: 0.2em;
+			}
+
+			img{
+				height: 100px;
+				width: auto;
+				border-radius: 50%;
+				border:5px solid rgba(0,0,50,0.5);
+				filter: grayscale(0.3);
+			}
+
+			.rightarticle{
+				width: 67%;
+				/*background-color: aqua;*/
+				height: 10vh;
+				margin-right: 2%;
+				float:right;
+				text-align: justify;
+				font-size: 1.4em;
+				line-height: 1.3;
+				font-family: 'Varela Round', sans-serif;
+				color: white;
+				animation: faden 0.5s linear ;
+				margin-top: 5px;
+				animation-delay: 0.3s;
+				animation-fill-mode: forwards;
+				opacity: 0%;
+				/*text-align: center;*/
+			}
+			@keyframes faden{
+				0%{ opacity:0%;margin-top: 45px; }
+				100%{ opacity: 100%;margin-top: 5px; }
+			}
+
+    .typewriter{
+    	position: absolute;
+    margin: 40px 2px; 
+    text-align: center;
+    animation: fade 0.7s ease-in;
+    /*background-color: red;*/
+    /*animation: blink-caret .5s step-end infinite !important;*/
+    }
+
+    .typewriter h1 {
+    	font-size: 2em;
+      color: #fff;
+      overflow: hidden; /*content is not revealed until the animation */
+      border-right: .15em solid #ff365e; /* cursor */
+      white-space: nowrap; /* Keeps the content on a single line */
+        /*Gives that scrolling effect as the typing happens*/ 
+      letter-spacing: .1em; 
+      width: 0%;
+}
+	/*---------footer-----------*/
+	
+	.footer {
+		bottom: 14%;
+    	position: fixed;
+    	right: 15%;
+    	color: white;
+    	animation: faden 0.5s linear ;
+				margin-top: 5px;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+				opacity: 0%;
+
+	}
+
+  .flink{
+		/*font-size: 2.5em;*/
+		/*background-color: red;*/
+   position: absolute;
+  transform: translate(-20%, -40%);
+  padding: 20px 20px;
+  background-color: rgba(0,0,0,0.6);
+  overflow: hidden;}	
+  .flink2{
+		/*font-size: 2.5em;*/
+		/*background-color: red;*/
+   position: absolute;
+  transform: translate(-190%, -40%);
+  padding: 20px 20px;
+  overflow: hidden;
+background-color: rgba(0,0,0,0.6);}	
+  .flink3{
+		/*font-size: 2.5em;*/
+		/*background-color: red;*/
+   position: absolute;
+  transform: translate(-360%, -40%);
+  padding: 20px 20px;
+  overflow: hidden;
+background-color: rgba(0,0,0,0.6);}	
+  .flink4{
+		/*font-size: 30px;*/
+		/*background-color: red;*/
+   position: absolute;
+  transform: translate(-530%, -40%);
+  padding: 20px 20px;
+  overflow: hidden;
+background-color: rgba(0,0,0,0.6);}	
+.fa:hover{
+	color: #ff365e;
+	font-size: 28px;
+}
+	span {position: absolute;}
+
+  span:nth-child(1) {
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent , #ff365e , transparent);
+    animation: animate1 2s linear infinite;
+  }    
+  span:nth-child(2) {
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to top, transparent , #ff365e, transparent);
+    animation: animate2 2s linear infinite;
+  }
+  span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to left, transparent , #ff365e , transparent);
+    animation: animate3 2s linear infinite;
+  }  
+  span:nth-child(4) {
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent , #ff365e , transparent);
+    animation: animate4 2s linear infinite;
+  }    
+  
+
+
+    @keyframes typing {
+      0%{ width: 0 }
+      60% { width: 100% }
+      90%{ width: 0% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #ff365e }
+    }
+
+
+@keyframes animate2 {
+  0% {transform: translateY(100%);}
+  100% {transform: translateY(-100%);}  
+}
+
+@keyframes animate3 {
+  0% {transform: translateX(100%);}
+  100% {transform: translateX(-100%);}  
+}
+
+@keyframes animate4 {
+  0% {transform: translateY(-100%);}
+  100% {transform: translateY(100%);}  
+}
+@keyframes animate1 {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(100%);}  
+}
+
+
+@media (max-width:600px){
+  .leftsection{width: 100%;float: none;position: initial;}
+    .rightarticle{width: 100%;float: none;}
+
+}
+			
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="mainbody">
+
+<section class="leftsection " >
+	<img src="static/profile2.jpg"><br>
+
+	<p>RITIK DESWAL</p>
+<!-- 	<div class="typewriter" id="type">
+  <h1 id="content" >ENGINEER.</h1>
+</div> -->
+</section>
+<article class="rightarticle">
+Hi, I am a motivated, resolute and skilled individual seeking for profuse prospects in IT support and computer science . I have lately brushed up my skills in computer architecture, networking, operating systems, system administration , cryptology ,graphic designing , python programming and frontend web development. scorpion graphic is a platform where I intend to display my work gradually with every ladder I climb. I will be happier to welcome people of same interests to share their ideas and concepts.
+
+</article>
+</div>
+<foooter class="footer">
+<a href="https://www.facebook.com/ritik.deswal.77/" class="flink fa fa-facebook-f" style="font-size:24px">
+<span></span><span></span><span></span><span></span>
+</a>
+<a href="https://www.instagram.com/scorpion_graphic/" class="flink2 fa fa-instagram" style="font-size:24px">
+<span></span><span></span><span></span><span></span>
+</a>
+<a href="https://github.com/ritikdeswal" class="flink3 fa fa-github" style="font-size:24px">
+<span></span><span></span><span></span><span></span>
+</a>
+<a href="https://www.linkedin.com/in/ritikdeswal77/" class="flink4 fa fa-linkedin" style="font-size:24px">
+<span></span><span></span><span></span><span></span>
+</a>
+</foooter>
+
+
+<!-- 
+  <script type="text/javascript">
+
+    var x = document.getElementById("content");
+    x.style.animation="typing 1.5s steps(15) 1s 5 " ;
+    x.addEventListener("webkitAnimationIteration", itr);
+    x.addEventListener("animationiteration", itr);
+    x.addEventListener("webkitAnimationEnd", end);
+    x.addEventListener("animationend",end);
+    var i=0;
+    function itr() {
+      var datas=[ "DESIGNER.", "DEVELOPER.","GAMER.","NOT A BOT."];
+      this.innerHTML = datas[i++] ;
+    }
+    function end(){
+    	this.style.border="0.0em";
+    }
+  </script> -->
+
+
+{% endblock %}

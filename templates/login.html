@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+
+<style >
+	
+	#inputs{
+	/*background-color: aquamarine;*/
+		background: transparent;
+		height: 40px;
+		color: white;
+		margin: 15px 0;
+		/*float: right;*/
+		/*position: relative;*/
+		width: 60%;
+		border:2px solid rgba(0,0,0,1.0);
+		border-radius: 6px;
+		outline: none;
+		padding: 10px;
+		box-shadow: 0px 0px 30px rgba(0,0,0,0.0);
+		transition: 0.2s;
+		}	
+	
+	#inputs:focus{box-shadow: 0px 0px 30px rgba(0,0,0,0.8);}
+			
+	#form1{
+		width: 50%;
+		margin:80 auto 0 ;
+		/*background-color:antiquewhite;*/
+		/*position: absolute;*/
+		text-align: center;
+		}
+			
+	::placeholder {
+  		color: rgba(255,255,255,0.7);
+  		padding: 20px;
+  		line-height: normal;
+  		font-style: italic;
+  		font-family: 'Varela Round', sans-serif;
+  		font-stretch: expanded;
+  		 /* Firefox */
+		}
+
+
+	button{
+		margin: 20 250 ;
+		border-radius: 6px;
+		border: none;
+		background-color:#ff365e;
+/*		background-size:160px;*/
+		}
+	.generate{
+		font-size: 18px;
+		color: white;
+		font-weight: bold;
+		padding:10 20 10 20 ;
+/*		line-height: 55px;*/
+		font-family: 'Varela Round', sans-serif;
+		transform: scale(1.0);
+		transition: 0.3s;
+		outline: none;	
+		}
+	.generate:hover{transform: scale(1.1);}
+
+	.textc{
+		resize: none;vertical-align: bottom;
+			background: transparent;
+		color: white;
+		border:2px solid rgba(0,0,0,1.0);
+		border-radius: 6px;
+		outline: none;
+		padding: 10px;
+		box-shadow: 0px 0px 30px rgba(0,0,0,0.0);
+		transition: 0.2s;
+	}
+	.textc:focus{box-shadow: 0px 0px 30px rgba(0,0,0,0.8);}
+	#textarea{
+		margin: 50px 15px;
+		color: white;
+		font-family: 'Varela Round', sans-serif;
+		font-size: 20px;
+		display: inline;
+		}
+/*designing range slider */
+
+
+
+
+
+</style>
+<div id ="form1">
+	<form action="/dashboard" method="post" novalidate>
+		<div id="textarea">Username : </div> <input type="text" id="inputs" name="username" required>
+		<br>
+		<div id="textarea">Password : </div> <input type="password" id="inputs" name="password" required>
+		<br>
+		
+		<button type="submit">
+			<p class="generate">LOGIN</p>
+		</button>
+		<p style="color: white;font-size: 1.1em;">{{para}}</p>
+	</form>
+
+</div>
+
+  {% endblock %}
