@@ -38,6 +38,7 @@ from newsapi import NewsApiClient
 def index():
     return render_template("index.html")
 ```
+
 ![navbar](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_2-38-45%20AM.png)
 
 ## URL shortner
@@ -54,6 +55,7 @@ def urlshortener():
             return render_template("url-shortener.html", para="invalid")
     return render_template("url-shortener.html")
 ```
+
 ![URl-shortner](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_2-40-15%20AM.png)
 
 
@@ -65,6 +67,7 @@ def news():
     top_headlines = newsapi.get_top_headlines(sources='bbc-news,the-verge', language='en')
     articles = top_headlines['articles']
 ```
+
 ![](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_2-54-10%20AM.png)
 
 
@@ -92,16 +95,20 @@ document.getElementById("stats2").disabled = true;
 ![](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_2-44-45%20AM.png)
 
 # Other screenshots
-##Random password generator
+## Random password generator
+
 ![random password generator](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_2-43-16%20AM.png)
 
-##Fake data generator
+## Fake data generator
+
 ![](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_2-49-43%20AM.png)
 
 ## Feedback Form
+
 ![](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_3-06-41%20AM.png)
 
 ## Feedback responses
+
 ![](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_3-13-53%20AM.png)
 
 
