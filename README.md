@@ -38,6 +38,7 @@ from newsapi import NewsApiClient
 def index():
     return render_template("index.html")
 ```
+![](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/homepage.gif)
 
 ![navbar](https://github.com/ritikdeswal/Scorpion-Graphic---Flask-web-app/blob/master/scrnli_11_2_2020_2-38-45%20AM.png)
 
