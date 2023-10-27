@@ -68,7 +68,7 @@ typing-extensions==3.7.4.3
 typing-inspect==0.6.0
 urllib3==1.26.5
 webencodings==0.5.1
-Werkzeug==2.2.3
+Werkzeug==3.0.1
 win32-setctime==1.0.3
 word2number==1.1
 wrapt==1.12.1
