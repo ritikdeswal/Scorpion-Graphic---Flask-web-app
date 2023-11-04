@@ -12,7 +12,7 @@ click-spinner==0.1.10
 colorama==0.4.4
 commonmark==0.9.1
 comtypes==1.1.7
-Django==3.2.18
+Django==3.2.23
 docopt==0.6.2
 Faker==4.14.0
 flake8==3.8.4
@@ -77,3 +77,4 @@ zipp==3.3.1
 wtforms>=3.0.0a1 # not directly required, pinned by Snyk to avoid a vulnerability
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
 authlib>=1.1.0 # not directly required, pinned by Snyk to avoid a vulnerability
+pillow>=10.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
