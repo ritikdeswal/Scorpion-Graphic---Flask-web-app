@@ -36,7 +36,7 @@ newsapi-python==0.2.6
 num2words==0.5.10
 numerizer==0.1.5
 numpy==1.22.2
-paramiko==2.10.1
+paramiko==3.4.0
 passlib==1.7.3
 pgadmin4==6.17
 psutil==5.7.3
