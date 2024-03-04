@@ -12,7 +12,7 @@ click-spinner==0.1.10
 colorama==0.4.4
 commonmark==0.9.1
 comtypes==1.1.7
-Django==3.2.18
+Django==3.2.25
 docopt==0.6.2
 Faker==4.14.0
 flake8==3.8.4
